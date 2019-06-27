@@ -1,6 +1,5 @@
 import com.alibaba.fastjson.JSON;
 import com.ql.servicetest.conditionDemo.Person;
-import org.json.JSONObject;
 import org.junit.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -17,14 +16,12 @@ import java.util.Map;
  */
 public class ConditionTest extends BaseTest implements ApplicationContextAware {
 
-
-
     @Test
     public void test1() {
         Map<String, Person> beansOfType = ApplicationContext.getBeansOfType(Person.class);
 
         String property = ApplicationContext.getEnvironment().getProperty("os.name");
-        System.out.println("当前系统为:"+property);
+        System.out.println("当前系统为:" + property);
 
         System.out.println(JSON.toJSONString(beansOfType));
 
