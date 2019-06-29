@@ -1,3 +1,29 @@
 #端口
 server:
   port: 8080
+
+redis:
+  task:
+    host: 127.0.0.1
+    port: 6379
+    pass:
+    db: 2
+    config:
+#      超时
+      timeout: 10000
+#      控制一个pool可分配多少个jedis实例
+      maxTotal: 100
+#      最大空闲数
+      maxIdle: 10
+#      最大等待时间
+      maxWaitMillis: 100000
+#      连接的最小空闲时间 默认1800000毫秒(30分钟)
+      minEvictableIdleTimeMillis: 300000
+#      每次释放连接的最大数目,默认3
+      numTestsPerEvictionRun: 1024
+#      逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认-1
+      timeBetweenEvictionRunsMillis: 30000
+#      是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个
+      testOnBorrow: true
+#      在空闲时检查有效性, 默认false
+      testWhileIdle: true

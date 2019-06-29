@@ -2,6 +2,7 @@ package com.ql.controller;
 
 import com.ql.servicetest.ServiceTest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +19,19 @@ public class TestController {
     @Autowired
     private ServiceTest serviceTest;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+
     @GetMapping("/")
     public String whoani() {
-
         return serviceTest.whoami();
+    }
 
+    @GetMapping("/redis")
+    public String redis() {
+        redisTemplate.opsForValue().set("aaa","aaa");
+        return (String) redisTemplate.opsForValue().get("aaa");
     }
 
 }

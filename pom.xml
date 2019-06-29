@@ -16,6 +16,7 @@
 		<autoconfigure.project>0.0.1-SNAPSHOT</autoconfigure.project>
 		<lombok.version>1.18.4</lombok.version>
 		<alibaba.fastjson>1.2.58</alibaba.fastjson>
+		<jedis-version>2.9.0</jedis-version>
 	</properties>
 
 	<modules>

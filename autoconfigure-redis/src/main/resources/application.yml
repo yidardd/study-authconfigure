@@ -1,0 +1,7 @@
+server:
+  #端口号
+  port: 8899
+  #项目名，如果不设定，默认是 /
+#  context-path: /spring-boot-mail
+
+
