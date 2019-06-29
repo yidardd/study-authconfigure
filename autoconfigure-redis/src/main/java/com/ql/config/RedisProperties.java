@@ -2,6 +2,7 @@ package com.ql.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * @ClassName RedisProperties
@@ -12,6 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties("redis.task")
 @Data
+@Component
 public class RedisProperties {
 
     private String host;

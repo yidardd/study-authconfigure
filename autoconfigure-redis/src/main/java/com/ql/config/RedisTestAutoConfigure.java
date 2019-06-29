@@ -20,7 +20,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 @Configuration
 @ConditionalOnClass(RedisProperties.class)
-@EnableConfigurationProperties(RedisProperties.class)
+
 public class RedisTestAutoConfigure {
 
     @Autowired
